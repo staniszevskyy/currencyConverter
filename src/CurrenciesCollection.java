@@ -6,8 +6,9 @@ import java.util.Map;
 public class CurrenciesCollection {
     private Map<String, CurrencyEntity> map;
 
-    // dorobic konstruktor dzialajacy na xmlu
-
+    public CurrenciesCollection(Map<String, CurrencyEntity> map) {
+        this.map = map;
+    }
 
     public CurrencyEntity getCurrencyByCode(String code){
         for (String name : map.keySet()){

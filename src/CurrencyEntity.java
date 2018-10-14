@@ -3,10 +3,10 @@ package src;
 public class CurrencyEntity {
     private String code;
     private String name;
-    private double multipliciand;
+    private int multipliciand;
     private double exchangeRate;
 
-    public CurrencyEntity(String code, String name, double multipliciand, double exchangeRate) {
+    public CurrencyEntity(String name, int multipliciand, String code, double exchangeRate) {
         this.code = code;
         this.name = name;
         this.multipliciand = multipliciand;
@@ -21,7 +21,7 @@ public class CurrencyEntity {
         return name;
     }
 
-    public double getMultipliciand() {
+    public int getMultipliciand() {
         return multipliciand;
     }
 
@@ -29,7 +29,7 @@ public class CurrencyEntity {
         return exchangeRate;
     }
 
-    public void setMultipliciand(double multipliciand) {
+    public void setMultipliciand(int multipliciand) {
         this.multipliciand = multipliciand;
     }
 
