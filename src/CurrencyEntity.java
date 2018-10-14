@@ -6,6 +6,13 @@ public class CurrencyEntity {
     private double multipliciand;
     private double exchangeRate;
 
+    public CurrencyEntity(String code, String name, double multipliciand, double exchangeRate) {
+        this.code = code;
+        this.name = name;
+        this.multipliciand = multipliciand;
+        this.exchangeRate = exchangeRate;
+    }
+
     public String getCode() {
         return code;
     }
