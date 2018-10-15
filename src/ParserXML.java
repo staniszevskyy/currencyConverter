@@ -7,6 +7,7 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.*;
 import java.io.*;
+import java.net.URL;
 import java.util.Currency;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,8 +17,9 @@ public class ParserXML implements Parser{
     public Map<String, CurrencyEntity> Parse() throws IOException, ParserConfigurationException, SAXException {
         //parser buffer into xml
         Map<String, CurrencyEntity> map = new HashMap<>();
-
-        BufferedInputStream buffer = WebClient.getBuffer();
+        URL url = new URL(link);
+        BufferedInputStream buffer =  new BufferedInputStream(url.openStream());
+//        BufferedInputStream buffer = WebClient.getBuffer();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(buffer);
@@ -41,6 +43,7 @@ public class ParserXML implements Parser{
 
             }
         }
+        map.put("PLN",new CurrencyEntity("polski złoty", 1, "PLN",1));
         return map;
     }
 }
