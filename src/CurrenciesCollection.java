@@ -21,4 +21,15 @@ public class CurrenciesCollection {
     public Map<String, CurrencyEntity> getMap() {
         return map;
     }
+
+    public void Display(){
+        for (String element: map.keySet()){
+            System.out.printf("%s(%s): %f przelicznik: %d\n",
+                    map.get(element).getName(),
+                    map.get(element).getCode(),
+                    map.get(element).getExchangeRate(),
+                    map.get(element).getMultipliciand());
+        }
+    }
+
 }
