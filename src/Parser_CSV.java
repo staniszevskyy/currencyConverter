@@ -20,7 +20,7 @@ public class Parser_CSV implements Parser {
 
             br = new BufferedReader(new FileReader(csvFile));
             while ((line = br.readLine()) != null) {
-                // use comma as separator
+
                 String[] temp = line.split(cvsSplitBy);
                 temp[0]=temp[0].replace("\"",""); temp[1]=temp[1].replace("\"","");
                 temp[2]=temp[2].replace("\"",""); temp[3]=temp[3].replace("\"","");

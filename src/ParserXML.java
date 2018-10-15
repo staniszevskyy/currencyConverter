@@ -6,24 +6,24 @@ import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.*;
-import java.io.*;
+
 import java.net.URL;
-import java.util.Currency;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class ParserXML implements Parser{
     @Override
     public Map<String, CurrencyEntity> Parse() throws IOException, ParserConfigurationException, SAXException {
-        //parser buffer into xml
+
         Map<String, CurrencyEntity> map = new HashMap<>();
         URL url = new URL(link);
         BufferedInputStream buffer =  new BufferedInputStream(url.openStream());
-//        BufferedInputStream buffer = WebClient.getBuffer();
+
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(buffer);
-        Element root = doc.getDocumentElement();
+
         NodeList nList = doc.getElementsByTagName("pozycja");
         for (int i = 0; i < nList.getLength(); i++)
         {

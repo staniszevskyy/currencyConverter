@@ -4,7 +4,7 @@ public class ValidateNumber implements Validate {
     @Override
     public Boolean check(String name) {
         try {
-            double val = Double.parseDouble(name);
+            Double.parseDouble(name);
         }
         catch (NumberFormatException | NullPointerException e){
             return false;

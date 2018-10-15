@@ -9,7 +9,7 @@ public class DisplayMap {
                     map.get(element).getName(),
                     map.get(element).getCode(),
                     map.get(element).getExchangeRate(),
-                    map.get(element).getMultipliciand());
+                    map.get(element).getMultiplicand());
         }
     }
 }

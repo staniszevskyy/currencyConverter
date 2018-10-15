@@ -9,12 +9,12 @@ public class Calculator {
 
     public double convert(CurrencyEntity input, CurrencyEntity output, double value){
         if (input.getCode().equals("PLN"))
-            return value/=output.getExchangeRate()*output.getMultipliciand();
+            return value/output.getExchangeRate()*output.getMultiplicand();
         else if (output.getCode().equals("PLN"))
-            return value*=input.getExchangeRate()*input.getMultipliciand();
+            return value*input.getExchangeRate()*input.getMultiplicand();
         else{
-            double plnEquivalent = value*input.getExchangeRate()*input.getMultipliciand();
-            return plnEquivalent/=output.getExchangeRate()*output.getMultipliciand();
+            double plnEquivalent = value*input.getExchangeRate()*input.getMultiplicand();
+            return plnEquivalent/output.getExchangeRate()*output.getMultiplicand();
         }
     }
 
