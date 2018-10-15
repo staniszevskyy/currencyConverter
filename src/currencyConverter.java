@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+
+
 public class currencyConverter {
 
     public static void displayMenu(){
@@ -20,6 +22,30 @@ public class currencyConverter {
         System.out.println("2. Przekonwertuj walutę");
         System.out.println("3. Zakończ");
         System.out.println("**************************************************");
+    }
+
+    public static void secondCaseQuery(Scanner in, Calculator calc){
+        Validate validateCode = new ValidateCode(calc);
+        Validate validateNumber = new ValidateNumber();
+
+        System.out.println("Podaj kwotę którą dysponujesz");
+        String val = in.next();
+        validateNumber.check(val);
+        System.out.println("Podaj kod waluty w której wpłacasz pieniądze");
+        String code = in.next();
+        validateCode.check(code);
+        System.out.println("Podaj kod waluty wyjściowej");
+        String code2 = in.next();
+        validateCode.check(code2);
+        if (validateNumber.check(val) && validateCode.check(code) && validateCode.check(code2)) {
+            code=code.toUpperCase();
+            code2=code2.toUpperCase();
+            CurrencyEntity w1 = calc.getCurrencyByCode(code); // col.getCurr before changes
+            CurrencyEntity w2 = calc.getCurrencyByCode(code2);
+            System.out.println("Otrzymana wartosc to: " + calc.convert(w1, w2, Double.parseDouble(val)) + " " + w2.getCode());
+        }
+        else
+            System.out.println("Niepoprawne dane");
     }
 
 
@@ -38,15 +64,7 @@ public class currencyConverter {
                         col.Display();
                         break;
                     case 2:
-                        System.out.println("Podaj kwotę którą dysponujesz");
-                        double val = in.nextDouble();
-                        System.out.println("Podaj kod waluty w której wpłacasz pieniądze");
-                        String code = in.next();
-                        System.out.println("Podaj kod waluty wyjściowej");
-                        String code2 = in.next();
-                        CurrencyEntity w1 = col.getCurrencyByCode(code);
-                        CurrencyEntity w2 = col.getCurrencyByCode(code2);
-                        System.out.println("Otrzymana wartosc to: " + calc.convert(w1, w2, val) + " " + w2.getCode());
+                        secondCaseQuery(in, calc);
                         break;
                     case 3:
                         return;
