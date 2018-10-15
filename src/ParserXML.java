@@ -15,7 +15,7 @@ public class ParserXML implements Parser{
     @Override
     public Map<String, CurrencyEntity> Parse() throws IOException, ParserConfigurationException, SAXException {
         //parser buffer into xml
-        Map<String, CurrencyEntity> map = new HashMap<String, CurrencyEntity>();
+        Map<String, CurrencyEntity> map = new HashMap<>();
 
         BufferedInputStream buffer = WebClient.getBuffer();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();

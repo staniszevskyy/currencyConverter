@@ -3,12 +3,16 @@ package src;
 public class Calculator {
     private CurrenciesCollection collection;
 
+    public Calculator(CurrenciesCollection collection) {
+        this.collection = collection;
+    }
+
     public double convert(CurrencyEntity input, CurrencyEntity output, double value){
         if (input.getCode().equals("PLN"))
             return value*=output.getExchangeRate()*output.getMultipliciand();
         else{
             double plnEquivalent = value*input.getExchangeRate()*input.getMultipliciand();
-            return plnEquivalent*=output.getExchangeRate()*output.getMultipliciand();
+            return plnEquivalent/=output.getExchangeRate()*output.getMultipliciand();
         }
     }
 
