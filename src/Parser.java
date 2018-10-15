@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Map;
 
 public interface Parser {
-    public static final String link="http://www.nbp.pl/kursy/xml/LastA.xml";
-    public Map<String, CurrencyEntity> Parse() throws IOException, ParserConfigurationException, SAXException;
+    String link="http://www.nbp.pl/kursy/xml/LastA.xml";
+    Map<String, CurrencyEntity> Parse() throws IOException, ParserConfigurationException, SAXException;
 
 }

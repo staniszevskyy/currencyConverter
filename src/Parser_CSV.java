@@ -10,7 +10,7 @@ import java.util.Map;
 public class Parser_CSV implements Parser {
     @Override
     public Map<String, CurrencyEntity> Parse() {
-        String csvFile = "F:/workspace/currencyConverter/src/waluty.csv";
+        String csvFile = "F:/workspace/View/src/waluty.csv";
         BufferedReader br = null;
         String line = "";
         String cvsSplitBy = ",";

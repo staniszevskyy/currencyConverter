@@ -1,19 +1,11 @@
 package src;
 
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
 
 
-public class currencyConverter {
+public class View {
 
     public static void displayMenu(){
         System.out.println("**************************************************");
@@ -61,7 +53,7 @@ public class currencyConverter {
                 int choice = in.nextInt();
                 switch (choice) {
                     case 1:
-                        col.Display();
+                        DisplayMap.display(col.getMap());
                         break;
                     case 2:
                         secondCaseQuery(in, calc);

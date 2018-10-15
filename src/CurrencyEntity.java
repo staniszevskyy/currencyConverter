@@ -29,11 +29,5 @@ public class CurrencyEntity {
         return exchangeRate;
     }
 
-    public void setMultipliciand(int multipliciand) {
-        this.multipliciand = multipliciand;
-    }
 
-    public void setExchangeRate(double exchangeRate) {
-        this.exchangeRate = exchangeRate;
-    }
 }
